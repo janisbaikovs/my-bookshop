@@ -1,0 +1,82 @@
+### Service Document
+GET http://localhost:4004/catalog/
+
+### $metadata
+GET http://localhost:4004/catalog/$metadata
+
+### Get Authors
+GET http://localhost:4004/catalog/Authors
+
+### Get Authors(101)
+GET http://localhost:4004/catalog/Authors(101)
+
+### Get Books
+GET http://localhost:4004/catalog/Books
+
+### Get Books(201)
+GET http://localhost:4004/catalog/Books(201)?sap-language=lt-LT
+
+### Create Order without UUID
+POST http://localhost:4004/catalog/Orders
+Content-Type: application/json
+
+{ 
+    "book_ID": 201, 
+    "amount": 1 
+}
+
+### Create Order with UUID
+POST http://localhost:4004/catalog/Orders
+Content-Type: application/json
+
+{ 
+    "ID": "c13d3eec-942e-470d-97b3-e03322136636", 
+    "book_ID": 201, 
+    "amount": 1 
+}
+
+### additional requests (remove @readonly and @insertonly annotations first)
+
+### Get Order by UUID (key)
+GET http://localhost:4004/catalog/Orders(c13d3eec-942e-470d-97b3-e03322136636)
+
+### Update the whole order
+PUT http://localhost:4004/catalog/Orders(c13d3eec-942e-470d-97b3-e03322136636)
+Content-Type: application/json
+
+{ 
+    "ID": "c13d3eec-942e-470d-97b3-e03322136636", 
+    "book_ID": 201, 
+    "amount": 10 
+}
+
+### Delete an Order
+DELETE http://localhost:4004/catalog/Orders(c13d3eec-942e-470d-97b3-e03322136636)
+
+### Get Orders
+GET http://localhost:4004/catalog/Orders
+
+### Get Orders with Books
+GET http://localhost:4004/catalog/Orders?$expand=book
+
+### Get Orders with Books + Author
+GET http://localhost:4004/catalog/Orders?$expand=book($expand=author)
+
+### Update the whole Author
+PUT http://localhost:4004/catalog/Authors(101)
+Content-Type: application/json
+
+{ "ID": 101, "name": "Emily Brontë II." }
+
+### Delete Author
+DELETE http://localhost:4004/catalog/Authors(101)
+
+## Create an Author
+POST http://localhost:4004/catalog/Authors
+Content-Type: application/json
+
+{ "ID": 101, "name": "Emily Brontë" }
+
+
+### Get country by numcode
+GET  http://localhost:4004/catalog/Orders(1)/country

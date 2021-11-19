@@ -1,0 +1,25 @@
+{
+    "files.exclude": {
+        "**/.gitignore": true,
+        "**/.git": true,
+        "**/.vscode": true
+    },
+    "eslint.validate": [
+        "cds",
+        "csn"
+    ],
+    "eslint.runtime": "node",
+    "eslint.nodePath": "/home/jbaikovs/.nvm/versions/node/v14.17.5/lib/node_modules/@sap/cds-dk/node_modules",
+    "eslint.options": {
+        "configFile": "/home/jbaikovs/.nvm/versions/node/v14.17.5/lib/node_modules/@sap/cds-dk/lib/lint/.eslintrc.js"
+    },
+    "launch": {
+    
+        "configurations": [],
+        "compounds": []
+    },
+    "terminal.integrated.automationShell.linux": "bash",
+    "terminal.integrated.automationShell.windows": "bash",
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.defaultProfile.osx": "bash"
+}

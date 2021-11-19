@@ -1,0 +1,16 @@
+### Create Purchase Order
+POST http://localhost:4004/catalog/PurchaseOrders
+Content-Type: application/json
+
+{ 
+    "book_ID" : 207,
+    "amount"  : 10
+}
+
+### Approve PO
+POST http://localhost:4004/catalog/approvePurchaseOrder
+Content-Type: application/json
+
+{
+    "id": "1cc7866e-55df-491d-97ce-2c18586adbb1"
+}
